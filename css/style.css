@@ -46,7 +46,6 @@ header .container {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-
 }
 
 header .logo {
@@ -58,8 +57,6 @@ header .logo {
   justify-content: center;
   align-items: center;
 }
-
-
 
 header .main-nav {
   display: flex;
@@ -77,8 +74,8 @@ header .main-nav > li > a {
   height: 72px;
 }
 
-header .main-nav > li > a::before{
-  content: "";
+header .main-nav > li > a::before {
+  content: '';
   position: absolute;
   width: 100%;
   height: 4px;
@@ -88,16 +85,81 @@ header .main-nav > li > a::before{
   transition: all 0.3s;
 }
 
-header .main-nav > li > a:hover{
+header .main-nav > li > a:hover {
   color: var(--main-color);
   background: #fafafa;
 }
 
-header .main-nav > li > a:hover::before{
+header .main-nav > li > a:hover::before {
   left: 0;
 }
 
 /* end header */
+
+/* start landing */
+
+.landing {
+  background: linear-gradient(
+    to right,
+    rgba(63, 120, 206, 0.8),
+    rgba(62, 150, 165, 0.4)
+  );
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0%, 100% 81%, 0% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.landing .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.container .text {
+  max-width: 400px;
+  flex: 1;
+}
+
+.container .text h1 {
+  font-size: 40px;
+  letter-spacing: -2;
+}
+
+.container .text p {
+  font-size: 24px;
+  line-height: 1.7;
+  color: rgba(221, 221, 221, 0.733) ddd;
+}
+
+.landing img {
+  width: 400px;
+}
+
+.landing .go-down {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+
+.landing .go-down i {
+  animation: move  1.5s infinite;
+}
+
+@keyframes move {
+  0%,10%,20%,50%,80%,100%{
+    transform: translateY(0);
+  }
+  40%,60%{
+    transform: translateY(-15px);
+  }
+}
+/* end landing */
 
 /* media query */
 
@@ -121,18 +183,35 @@ header .main-nav > li > a:hover::before{
   }
 }
 
-@media(max-width:767px){
-  header .logo{
-     width: 100%;
-     height: 50px;
+@media (max-width: 767px) {
+  header .logo {
+    width: 100%;
+    height: 50px;
   }
-  header .main-nav{
+  header .main-nav {
     margin: auto;
   }
 
-  header .main-nav >li >a {
+  header .main-nav > li > a {
     padding: 10px;
     font-size: 13px;
     height: 40px;
+  }
+
+  .landing .text h1 {
+    font-size: 28px;
+  }
+  .landing .text p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 991px) {
+  .landing .img {
+    display: none;
+  }
+
+  .landing .text {
+    text-align: center;
   }
 }
