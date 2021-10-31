@@ -392,7 +392,11 @@ header .main-nav #others:hover .mega-menu {
 
 .gallery {
   padding: 30px 0;
-  background: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(182, 226, 231, 0.1),
+    rgba(50, 224, 230, 0.1)
+  );
 }
 
 .gallery .container {
@@ -408,51 +412,220 @@ header .main-nav #others:hover .mega-menu {
     0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
-.gallery .box .image{
+.gallery .box .image {
   position: relative;
   overflow: hidden;
-
 }
 
-.gallery .box .image::before{
-  content: "";
+.gallery .box .image::before {
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  background-color:rgba(102, 162, 218, 0.151);
+  transform: translate(-50%, -50%);
+  background-color: rgba(102, 162, 218, 0.151);
   width: 0;
   height: 0;
   opacity: 0;
   z-index: 2;
-  
 }
 
-.gallery .box .image:hover::before{
+.gallery .box .image:hover::before {
   animation: flashing 0.3s;
 }
 
 @keyframes flashing {
-  0%, 40%{
+  0%,
+  40% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
     width: 200%;
     height: 200%;
   }
-
 }
 
 .gallery .box img {
   max-width: 100%;
   transition: all 0.3s;
-
 }
 
-.gallery .box .image:hover img{
+.gallery .box .image:hover img {
   transform: rotate(5deg) scale(1.1);
 }
+
+/* features */
+
+.features {
+  padding: 30px 0;
+  background: #fff;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.features .box {
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.features .box .img {
+  position: relative;
+  overflow: hidden;
+}
+.features .box .img::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.features .box .img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 170px 500px;
+  border-color: transparent transparent #fff transparent;
+  transition: all 0.3s;
+}
+
+.features .box .img img {
+  max-width: 100%;
+}
+
+.features .box:hover .img::after {
+  border-width: 170px 500px 170px 0;
+}
+
+.features .box h2 {
+  position: relative;
+  font-size: 40px;
+  margin: auto;
+  width: fit-content;
+}
+
+.features .box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  height: 5px;
+  width: 100%;
+}
+
+.features .box p {
+  line-height: 2;
+  font-size: 20px;
+  margin: 30px 0;
+  padding: 25px;
+  color: #777;
+}
+
+.features .box a {
+  display: block;
+  border: 3px solid transparent;
+  width: fit-content;
+  margin:20px auto;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+
+.features .quality .img::before{
+background-color: rgba(216, 18, 18, 0.5);
+}
+
+.features .quality h2::after{
+  background-color: #f44036;
+}
+
+
+.features .quality a{
+color: #f44036;
+border-color: #f44036;
+background: linear-gradient(to right, #f44036 50%,#fff 50%);
+background-size: 200% 100%;
+background-position: right bottom;
+}
+
+
+.features .quality .img::before{
+background-color: rgba(216, 18, 18, 0.5);
+}
+
+.features .quality h2::after{
+  background-color: #f44036;
+}
+
+
+.features .quality a{
+color: #f44036;
+border-color: #f44036;
+background: linear-gradient(to right, #f44036 50%,#fff 50%);
+background-size: 200% 100%;
+background-position: right bottom;
+}
+
+
+
+/* green */
+
+
+
+.features .time .img::before{
+  background-color: rgba(18, 216, 133, 0.5);
+  }
+  
+  .features .time h2::after{
+    background-color: #36f45f;
+  }
+  
+  
+  .features .time a{
+  color: #36f465;
+  border-color: #36f45f;
+  background: linear-gradient(to right, #36f45f 50%,#fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  }
+
+
+  /* new passion */
+
+.features .passion .img::before{
+  background-color: rgba(186, 216, 18, 0.5);
+  }
+  
+  .features .passion h2::after{
+    background-color: #d1f436;
+  }
+  
+  
+  .features .passion a{
+  color: #e1f436;
+  border-color: #c1f436;
+  background: linear-gradient(to right, #d8f436 50%,#fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  }
+  
+  
+.features .box:hover a{
+  background-position: left bottom;
+  color: #fff;
+}
+
+
+
 /* media query */
 
 @media (min-width: 768px) {
