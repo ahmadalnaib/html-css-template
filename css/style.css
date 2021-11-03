@@ -626,6 +626,66 @@ background-position: right bottom;
 
 
 
+
+/* testimonials */
+
+.test{
+padding: 30px 0;
+background: linear-gradient(
+  to right,
+  rgba(182, 226, 231, 0.1),
+  rgba(50, 224, 230, 0.1)
+);
+}
+
+
+.test .container{
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+gap: 80px 60px;
+}
+
+.test .box{
+padding: 20px;
+background: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+position: relative;
+border-radius: 6px;
+margin: 30px 0;
+}
+
+.test .box img{
+width: 100px;
+position: absolute;
+right: -10px;
+top: -50px;
+
+}
+
+.test .box h3{
+margin: 0 0 10px ;
+color: #2196f3;
+}
+
+.test .box .title{
+  color: #777;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.test .box .rate .fill {
+color: #ffc107;
+}
+
+.test .box p {
+line-height: 1.5;
+color: #777;
+margin-top: 10px;
+}
+
+
+
+
 /* media query */
 
 @media (min-width: 768px) {
